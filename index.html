@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .salam{
+            max-width: 600px;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: sans-serif;
+        }
+
+        .formcontainer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button{
+            padding: 9px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>video player</h1>
+    <form action="">
+        <div class="formcontainer">
+            <label for="inps">select video</label>
+            <input type="file"  id="inps" accept="video/*">
+            <button type="submit" class="submitBtn">submit</button>
+        </div>
+    </form>
+
+    <video src="" class="salam" controls></video>
+    
+
+    <script>
+        let submitBtn = document.querySelector('.submitBtn');
+        let myForm = document.querySelector('form');
+        let vidoe = document.querySelector('.salam');
+        myForm.addEventListener('submit',( e ) => {
+            e.preventDefault();
+            const file = document.querySelector('#inps').files[0]
+            console.log(file);
+            vidoe.src = file.path
+        })
+
+
+
+        console.log(vidoe);
+    </script>
+</body>
+</html>
